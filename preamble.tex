@@ -1,0 +1,82 @@
+% 字体包导入
+\usepackage{fontspec}
+% 页眉页脚定制
+\usepackage{fancyhdr}
+% title size
+\usepackage{titlesec}
+% 设置行距
+\usepackage{setspace}
+% 段落首行缩进
+\usepackage{indentfirst}
+% list缩进
+\usepackage{enumitem}
+% 图片插入
+\usepackage{graphicx}
+% 子图支持
+\usepackage{subcaption}
+% 计数器控制
+\usepackage{chngcntr}
+% 数学公式排版
+\usepackage{amsmath,amssymb}
+% 目录管理
+\usepackage{tocloft}
+% 插入pdf界面
+\usepackage{pdfpages}
+% 调整页边距
+\usepackage{geometry}
+% 脚注功能
+\usepackage{footmisc}
+% 图表间距控制
+\usepackage{float}
+% 跳转管理
+\usepackage{hyperref}
+% 智能引用
+\usepackage[noabbrev]{cleveref}
+% 表格线修饰
+\usepackage{booktabs}
+% 附录设计
+\usepackage{etoolbox}
+% 表格加框
+\usepackage[table]{xcolor}
+\usepackage{appendix}
+% 算法包
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+% 参考文献管理
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+\addbibresource{reference.bib}
+
+% ======== 字体设置 ========
+\setmainfont{Times New Roman}
+
+\setCJKmainfont[
+    Path=./fonts/,
+    AutoFakeBold=2.17,
+    AutoFakeSlant = 0.1
+]{simsun.ttc}
+\setCJKfamilyfont{hei}[
+    Path = ./fonts/,
+    AutoFakeBold = 2.17,
+    AutoFakeSlant = 0.1
+]{simhei.ttf}
+\newcommand{\hei}{\CJKfamily{hei}}
+
+% ======== 目录设置 ========
+\input{config/toc_config}
+
+% ======== 标题格式设置 ========
+\input{config/titles_config}
+
+% ======== 页面布局设置 ========
+\input{config/layout}
+
+% ======== 页眉页脚设置 ========
+\input{config/header_footer_config}
+
+% ======== 参考文献和脚注设置 ========
+\input{config/reference_footnote_config}
+
+% ======== 图表公式设置 ========
+\input{config/floats_config}
+
+% ======== 附录设置 ========
+\input{config/appendix_config}

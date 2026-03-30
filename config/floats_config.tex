@@ -1,0 +1,53 @@
+% ======== 图表/公式编号 ========
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+\counterwithin{equation}{chapter}
+\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
+\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+
+% ======== 图表标题设置 ========
+\captionsetup[figure]{
+    format=hang,
+    labelsep=space,
+    justification=centering,
+    singlelinecheck=false,
+    font=small,
+    skip=12pt,
+    position=bottom
+}
+\captionsetup[table]{
+    format=hang,
+    labelsep=space,
+    justification=centering,
+    singlelinecheck=false,
+    font=small,
+    skip=12pt,
+    position=bottom
+}
+\captionsetup[subfigure]{
+    labelformat=simple,
+    justification=centering,
+    font=small,
+    labelfont=normalfont
+}
+
+% ======== 图表与正文间距设置 ========
+\setlength{\intextsep}{1em}
+\setlength{\textfloatsep}{1em}
+\setlength{\floatsep}{1em}
+
+% ======== 图表环境设置 ========
+\def\fps@figure{htbp}
+\def\fps@table{htbp}
+
+% ======== 引用图表/公式设置 ========
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{公式}{公式}
+\crefname{chapter}{章}{章}
+\crefname{section}{节}{节}
+\crefformat{figure}{图~#1}
+\crefformat{table}{表~#1}
+\crefformat{equation}{公式~(#1)}

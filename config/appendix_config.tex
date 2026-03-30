@@ -1,0 +1,13 @@
+% ======== 设置附录标题格式 ========
+\renewcommand{\appendixname}{附录}
+\renewcommand{\appendixtocname}{附录}
+
+% ======== 附录章节样式 ========
+\apptocmd{\appendix}{
+\titleformat{\chapter}[block]
+{\hei\fontsize{15pt}{15pt}\selectfont\bfseries\centering}
+{\appendixname~\thechapter}
+{1em}
+{}
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+}{}{}

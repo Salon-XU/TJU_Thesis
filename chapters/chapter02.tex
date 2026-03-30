@@ -1,0 +1,83 @@
+\newpage
+\chapter{理论基础}
+
+\section{基于弗洛伊德理论的女性心理简述}
+    弗洛伊德在《xxxx》中阐述道，xxxxxxxxxxxxxxxxxxx，关于这一点可以参考图\ref{fig:refpic}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./images/NYU-logo.png}
+  \caption{参考图片}
+  \label{fig:refpic}
+\end{figure}
+
+    这里本人调研了部分数据，表格罗列可以参考\cref{tab:bound}
+\begin{table}[htbp]
+  \centering
+  \caption{效果对比图}
+  \label{tab:bound}
+  \begin{tabular}{cccc}
+    \toprule
+    \textbf{Method} & \textbf{data\_1} & \textbf{data\_2} & \textbf{data\_3} \\
+    \midrule
+    访谈-1 & \cellcolor{red!10}39.28 & \cellcolor{yellow!10}0.9727 & \cellcolor{green!10}0.9970 \\
+    访谈-2 & 38.41 & 0.9664 & 0.9958 \\
+    \midrule
+    问卷-1 & \cellcolor{pink!10}34.70 & \cellcolor{blue!10}0.9510 & \cellcolor{gray!10}0.9936 \\
+    问卷-2 & 33.54 & 0.9370 & 0.9908 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+    如果需要使用子图功能，参考如图\ref{fig:subins}：
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./images/AMD-logo.png}
+    \caption{AMD}
+    \label{fig:sub-a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{./images/Intel-logo.png}
+    \caption{Intel}
+    \label{fig:sub-b}
+  \end{subfigure}
+  \caption{子图结果示意:(a)AMD;(b)Intel}
+  \label{fig:subins}
+\end{figure}
+
+    如果需要援引公式，参考如\cref{eq:emc}
+\begin{equation}
+  E = mc^2
+  \label{eq:emc}
+\end{equation}
+
+    如果需要罗列要点，可以参考
+\begin{enumerate}[leftmargin=2cm]
+  \item 高斯分布的线性变换仍为高斯分布
+  \item 高斯分布间的卷积仍为高斯分布
+  \item 高斯分布的边缘分布仍为高斯分布
+\end{enumerate}
+
+    如果需要撰写算法流程，参考算法\ref{alg:bits-back_decode}
+\begin{algorithm}[htbp]
+  \caption{Partial Bits-Back Decode}
+  \label{alg:bits-back_decode}
+  \KwIn{bitstream $m$}
+  \KwOut{Gaussians[1:N]}
+  
+  $(m, N - K) \leftarrow$ ans-decode($m$) \tcp*{decode number of remaining Gaussians}
+  
+  $(m, G[K+1:N]) \leftarrow$ ans-decode($m$) \tcp*{decode $G[K+1:N]$}
+  
+  $(m, G[K+1:N]) \leftarrow$ ans-encode($m$, $\mathcal{U}_{(N-K)!}$, $G[K+1:N]$) \tcp*{re-encode with uniform distribution}
+  
+  $(m, G[1:K]) \leftarrow$ ans-decode($m$) \tcp*{decode $G[1:K]$}
+  
+  \KwRet{$G[1:N]$}
+\end{algorithm}
+
+    % 参考文献这里可以直接填写，不过奇怪的点在于使用overleaf的免费计划会超时
+    如果你想要引用某些文献，可以 \cite{test} 所述;
